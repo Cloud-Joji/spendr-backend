@@ -1,10 +1,18 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { TransactionsModule } from './transactions/transactions.module';
+import { IncomesModule } from './incomes/incomes.module';
+import { AuthService } from './auth/auth.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    MongooseModule.forRoot(`${process.env.DB_URI}/budgetAdmin`),
+    TransactionsModule,
+    IncomesModule,
+    AuthModule,
+  ],
+  controllers: [],
+  providers: [AuthService],
 })
 export class AppModule {}

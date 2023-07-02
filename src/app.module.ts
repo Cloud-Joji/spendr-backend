@@ -4,6 +4,9 @@ import { TransactionsModule } from './transactions/transactions.module';
 import { IncomesModule } from './incomes/incomes.module';
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
+import { StatusService } from './status/status.service';
+import { StatusController } from './status/status.controller';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -12,7 +15,7 @@ import { AuthModule } from './auth/auth.module';
     IncomesModule,
     AuthModule,
   ],
-  controllers: [],
-  providers: [AuthService],
+  controllers: [AppController, StatusController],
+  providers: [AuthService, StatusService],
 })
 export class AppModule {}

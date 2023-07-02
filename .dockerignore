@@ -1,0 +1,6 @@
+youtube.url
+README.md
+package-lock.json
+.gitignore
+.env
+/test

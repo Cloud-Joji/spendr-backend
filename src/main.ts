@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
-  const prefix = 'spendr';
+  const prefix = 'api/spendr';
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix(prefix);
   app.useGlobalPipes(new ValidationPipe());
